@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Glass effect styling */
+.sos-header,
+.sos-button,
+.info-section,
+.contact-card,
+.info-card,
+.biohack-card,
+.warning-box,
+.address-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.sos-header {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.sos-header h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+
+.instruction-text {
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+.sos-button-link {
+    text-decoration: none;
+    display: block;
+}
+
+.sos-button {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.sos-button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sos-button .icon {
+    font-size: 1.8em;
+}
+
+.info-section {
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
+    animation: fadeIn 0.3s ease;
+}
+
+.info-section h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.info-section h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Medical Info Styles */
+.info-card {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.info-item span {
+    text-align: right;
+    max-width: 60%;
+}
+
+/* Contact Styles */
+.contact-list {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contact-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.relation {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+.phone-link {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.phone-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Address Styles */
+.address-section {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.address-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+.map-link {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Biohack Styles */
+.biohack-list {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.biohack-card {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.biohack-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+}
+
+.biohack-card p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.warning-box {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 200, 0, 0.2);
+    border: 2px solid rgba(255, 200, 0, 0.4);
+}
+
+.warning-box p {
+    line-height: 1.6;
+    font-size: 1.05em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .sos-header h1 {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .instruction-text {
+        font-size: 1em;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .info-item span {
+        text-align: left;
+        max-width: 100%;
+    }
+}

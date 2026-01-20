@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  background: #111;
+  color: #eee;
+}
+
+.post {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+a {
+  text-decoration: none;
+  color: #7cf;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  background: #222;
+  border: 1px solid #555;
+  color: #eee;
+}
+
+button {
+  padding: 10px 20px;
+  background: #7cf;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}

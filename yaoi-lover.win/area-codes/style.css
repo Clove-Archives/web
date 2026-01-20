@@ -1,0 +1,95 @@
+/* Comic Code font declarations */
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff2') format('woff2'),
+        url('https://doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff2') format('woff2'),
+        url('https://doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff2') format('woff2'),
+        url('https://doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff2') format('woff2'),
+        url('https://doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Comic Code', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff80b3;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.search-container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.search-container input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.slang-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.slang-item {
+    background: #1e1e1e;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.slang-item:hover {
+    transform: scale(1.02);
+}
+
+.slang-item h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffb6c1;
+    /* baby pink for code */
+}
+
+.slang-item p {
+    margin: 0.3rem 0 0 0;
+    color: #a2d2ff;
+    /* baby blue for country names */
+}

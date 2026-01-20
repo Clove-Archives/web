@@ -1,0 +1,86 @@
+services:
+  restart: unless-stopped
+  discord:
+    image: ghcr.io/the-snesler/discord-github-preview:latest
+    container_name: discord
+    ports:
+      - "8002:3000"
+    env_file: .env
+    restart: unless-stopped
+  t4t:
+    build:
+      context: ./trans4trans.win/backend
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    restart: unless-stopped
+    env_file:
+      - .env
+  butterfly:
+    image: clovetwilight3/butterfly-network
+    container_name: butteffly-main
+    ports:
+      - "8004:8004"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  clovetwilight3.co.uk:
+    image: clovetwilight3/clovetwilight3
+    container_name: clovetwilight3
+    ports:
+      - "8005:8005"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  mazeymoos:
+    image: clovetwilight3/estrogen-moos:latest
+    container_name: estrogenhrt
+    ports:
+      - "8006:8006"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  midnight:
+    image: clovetwilight3/themidnightcyan:latest
+    container_name: midnightcyan
+    ports:
+      - "8007:8007"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  lgbt:
+    image: clovetwilight3/lgb-with-t
+    container_name: lgbt
+    ports:
+      - "8008:8008"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  nytrix:
+    image: clovetwilight3/clove-nytrix
+    container_name: clove-nytrix
+    ports:
+      - "8009:8009"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  status-back:
+    image: clovetwilight3/status-backend:latest
+    container_name: status-back
+    ports:
+      - "8010:8010"
+    restart: unless-stopped
+  status-front:
+    image: clovetwilight3/status-frontend:latest
+    container_name: status-front
+    ports:
+      - "8011:8011"
+    depends_on:
+      - status-back
+    restart: unless-stopped
+  lib-web:
+    image: clovetwilight3/clovelib
+    container_name: lib
+    ports:
+      - "8012:8012"
+    restart: unless-stopped

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Rules - Minecraft Server</title>
+    <meta name="description" content="Rules and guidelines for our Minecraft server community">
+    <meta property="og:site_name" content="Butterfly Network">
+    
+    <style>
+        /* Comic Code font declarations */
+        @font-face {
+            font-family: 'Comic Code';
+            src: url('https://doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff2') format('woff2'),
+                url('https://doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Comic Code';
+            src: url('https://doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff2') format('woff2'),
+                url('https://doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff') format('woff');
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Comic Code';
+            src: url('https://doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff2') format('woff2'),
+                url('https://doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Comic Code';
+            src: url('https://doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff2') format('woff2'),
+                url('https://doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Code', monospace;
+            background: #1a1a1a;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 139, 139, 0.1) 0%, transparent 50%);
+            min-height: 100vh;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .card {
+            background: rgba(40, 40, 40, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(57, 255, 20, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #39FF14, #008B8B, transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #39FF14, #008B8B);
+            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.5));
+            transition: all 0.3s ease;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 30px rgba(57, 255, 20, 0.8));
+            border-color: #39FF14;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #39FF14, #008B8B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #39FF14, #008B8B, transparent);
+            margin: 2rem 0;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+        }
+
+        .rules-container {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .rule-section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(30, 30, 30, 0.8);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #39FF14, #008B8B);
+            transition: width 0.3s ease;
+        }
+
+        .rule-section:hover {
+            transform: translateX(5px);
+            border-color: #39FF14;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 30px rgba(57, 255, 20, 0.2);
+            background: rgba(40, 40, 40, 0.9);
+        }
+
+        .rule-section:hover::before {
+            width: 8px;
+        }
+
+        .rule-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .rule-number {
+            background: linear-gradient(135deg, #39FF14, #008B8B);
+            color: #1a1a1a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .rule-section:hover .rule-number {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .rule-title {
+            color: #39FF14;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .rule-description {
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .rule-details {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .rule-details li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .rule-details li::before {
+            content: '▶';
+            color: #39FF14;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-section:hover .rule-details li::before {
+            transform: translateX(3px);
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.2), rgba(255, 140, 0, 0.1));
+            border-color: rgba(255, 140, 0, 0.5);
+            margin-top: 2rem;
+        }
+
+        .warning-section .rule-number {
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+        }
+
+        .warning-section .rule-title {
+            color: #ff8c00;
+        }
+
+        .warning-section::before {
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+        }
+
+        .info-box {
+            background: rgba(0, 139, 139, 0.2);
+            border: 1px solid rgba(0, 139, 139, 0.5);
+            color: #008B8B;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            border-top: 2px solid rgba(57, 255, 20, 0.2);
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            color: #39FF14;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 2rem 1rem;
+            }
+
+            .rule-section {
+                padding: 1.5rem;
+            }
+
+            .rule-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .rule-number {
+                margin-bottom: 0.5rem;
+                margin-right: 0;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #39FF14, #008B8B);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #45ff20, #00a0a0);
+        }
+
+        /* Focus effects for accessibility */
+        .rule-section:focus-within {
+            border-color: #39FF14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo-container">
+                <div class="logo">⛏️</div>
+            </div>
+            <h1>Server Rules</h1>
+            <p class="subtitle">Guidelines for our Minecraft community</p>
+            
+            <div class="divider"></div>
+
+            <div class="info-box">
+                Welcome to our Minecraft server! Please read and follow these rules to ensure everyone has a great time building and exploring together.
+            </div>
+            
+            <div class="rules-container">
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">0</div>
+                        <h2 class="rule-title">Discord Server Rules Apply</h2>
+                    </div>
+                    <p class="rule-description">All Discord server rules still apply here! This server is for paid SVG members only.</p>
+                    <ul class="rule-details">
+                        <li>Discord Server Rules still apply!</li>
+                        <li>Paid SVG Members ONLY!</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">1</div>
+                        <h2 class="rule-title">Be Respectful</h2>
+                    </div>
+                    <p class="rule-description">Treat all players with kindness and respect, regardless of their skill level or background.</p>
+                    <ul class="rule-details">
+                        <li>No harassment, bullying, or discrimination, in any form, including, but not limited to racism, xenophobia, transphobia, homophobia, ableism, pluralphobia, sexism, antisemitism, islamophobia, fatphobia, or classism</li>
+                        <li>Keep chat language appropriate for all ages</li>
+                        <li>Respect others' builds and personal space</li>
+                        <li>Help new players learn the ropes</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">2</div>
+                        <h2 class="rule-title">No Griefing or Stealing</h2>
+                    </div>
+                    <p class="rule-description">Respect other players' hard work and creativity. Build your own amazing creations!</p>
+                    <ul class="rule-details">
+                        <li>Don't destroy or modify others' builds without permission</li>
+                        <li>No stealing from chests, farms, or storage areas</li>
+                        <li>Ask before taking resources from community areas</li>
+                        <li>Report any griefing you witness to MC server team</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">3</div>
+                        <h2 class="rule-title">Fair Play Only</h2>
+                    </div>
+                    <p class="rule-description">Keep the game fun and fair for everyone by playing without unfair advantages.</p>
+                    <ul class="rule-details">
+                        <li>No hacking, cheating, or exploiting bugs</li>
+                        <li>No X-ray mods or unfair resource packs</li>
+                        <li>Approved client mods only (ask MC server team if unsure)</li>
+                        <li>No duplication glitches or item exploits</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">4</div>
+                        <h2 class="rule-title">Build Responsibly</h2>
+                    </div>
+                    <p class="rule-description">Create amazing builds while being mindful of the server and other players.</p>
+                    <ul class="rule-details">
+                        <li>No inappropriate builds or symbols</li>
+                        <li>Keep large builds away from spawn area</li>
+                        <li>Don't build too close to others without permission</li>
+                        <li>Clean up test builds and temporary structures</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <div class="rule-header">
+                        <div class="rule-number">5</div>
+                        <h2 class="rule-title">Follow MC Server Team Instructions</h2>
+                    </div>
+                    <p class="rule-description">Our moderators and admins are here to help make the server enjoyable for everyone.</p>
+                    <ul class="rule-details">
+                        <li>Listen to and follow MC server team member instructions</li>
+                        <li>Don't argue with MC server team decisions in public chat</li>
+                        <li>Contact MC server team privately if you have concerns</li>
+                        <li>Report rule violations to MC server team members</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section warning-section">
+                    <div class="rule-header">
+                        <div class="rule-number">⚠️</div>
+                        <h2 class="rule-title">Consequences</h2>
+                    </div>
+                    <p class="rule-description">Breaking these rules may result in warnings, temporary bans, or permanent removal from the server.</p>
+                    <ul class="rule-details">
+                        <li>First offense: Warning and explanation</li>
+                        <li>Minor violations: Temporary jail</li>
+                        <li>Serious violations: Temporary ban (1-7 days)</li>
+                        <li>Severe/repeated violations: Permanent ban</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="footer">
+                <p>Questions about the rules? Need help with something?</p>
+                <p class="contact-info">Contact our MC server team in-game or on Discord!</p>
+                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    Last updated: September 2025 | Made with ❤️ for our community
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive hover effects
+        document.querySelectorAll('.rule-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px) scale(1.02)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Add click effect for mobile
+        document.querySelectorAll('.rule-section').forEach(section => {
+            section.addEventListener('click', function() {
+                this.style.transform = 'translateX(5px) scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'translateX(0) scale(1)';
+                }, 200);
+            });
+        });
+
+        // Smooth scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add scroll to top on logo click
+        document.querySelector('.logo').addEventListener('click', scrollToTop);
+    </script>
+</body>
+</html>
