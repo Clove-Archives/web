@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2026 Clove Twilight
+ * Licensed under the ESAL-1.3 Licence.
+ * See LICENCE.md in the project root for full licence information.
+ */
+
+import "@/eggs/partyMode";
+import "@/eggs/nyanMode";
+import "@/eggs/matrix";
+import "@/eggs/butterflyMode"
+import "@/eggs/relic";
+import "@/eggs/spike";
+import "@/eggs/sudoMode";
+
+// Welcome in console
+console.log(`
+%cWelcome to the Doughmination System®!
+
+%c🎨 Looking for easter eggs? You never know where they are! :D
+%c💼 Interested in the code? Check out our GitHub: https://github.com/doughmination/web
+
+`, 
+'color: #FF69B4; font-size: 18px; font-weight: bold;',
+'color: #8b5cf6; font-size: 14px;',
+'color: #3b82f6; font-size: 14px;',
+'color: #10b981; font-size: 14px;',
+);

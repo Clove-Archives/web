@@ -1,0 +1,5 @@
+TODO:
+
+Add new dashboard for owner stuff
+
+See all connected websocket users by IP and browser name (NO LOGGING FOR SAFETY REASONS!), so we can block server abusing
